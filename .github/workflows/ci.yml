@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  pull_request:
+    branches: 
+      - '**'
+
+jobs:
+
+  micro_ros_nuttx_app:
+    runs-on: ubuntu-latest
+    container: ubuntu:20.04    
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          path: repo
+      - name: Dependencies
+        shell: bash
+        run: |
+          apt update
+          export DEBIAN_FRONTEND=noninteractive
+          apt install -y --no-install-recommends git bison flex gettext texinfo libncurses5-dev libncursesw5-dev gperf automake libtool pkg-config build-essential gperf genromfs libgmp-dev libmpc-dev libmpfr-dev libisl-dev binutils-dev libelf-dev libexpat-dev gcc-multilib g++-multilib picocom u-boot-tools util-linux kconfig-frontends gcc-arm-none-eabi binutils-arm-none-eabi python3-pip cmake libnewlib-arm-none-eabi
+          pip3 install catkin_pkg lark-parser empy colcon-common-extensions
+          mkdir microros_nuttx; cd microros_nuttx;
+          git clone -b master https://github.com/apache/incubator-nuttx.git nuttx
+          git clone -b master https://github.com/apache/incubator-nuttx-apps apps
+
+      - name: Build
+        shell: bash
+        run: |
+          cp -r repo microros_nuttx/apps/microros
+          pushd microros_nuttx/nuttx/
+          ./tools/configure.sh -l b-l475e-iot01a:nsh
+          popd
+          cp repo/.github/workflows/ci_config  microros_nuttx/nuttx/.config
+          cd microros_nuttx/nuttx/
+          make -j$(nproc)
