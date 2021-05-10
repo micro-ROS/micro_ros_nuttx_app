@@ -10,7 +10,9 @@ jobs:
   micro_ros_nuttx_app:
     runs-on: ubuntu-latest
     container: ubuntu:20.04    
-
+    strategy:
+      matrix:
+        nuttx_version: [releases/10.0, releases/10.1]
     steps:
       - uses: actions/checkout@v2
         with:
@@ -23,8 +25,8 @@ jobs:
           apt install -y --no-install-recommends git bison flex gettext texinfo libncurses5-dev libncursesw5-dev gperf automake libtool pkg-config build-essential gperf genromfs libgmp-dev libmpc-dev libmpfr-dev libisl-dev binutils-dev libelf-dev libexpat-dev gcc-multilib g++-multilib picocom u-boot-tools util-linux kconfig-frontends gcc-arm-none-eabi binutils-arm-none-eabi python3-pip cmake libnewlib-arm-none-eabi
           pip3 install catkin_pkg lark-parser empy colcon-common-extensions
           mkdir microros_nuttx; cd microros_nuttx;
-          git clone -b master https://github.com/apache/incubator-nuttx.git nuttx
-          git clone -b master https://github.com/apache/incubator-nuttx-apps apps
+          git clone -b ${{ matrix.nuttx_version }} https://github.com/apache/incubator-nuttx.git nuttx
+          git clone -b ${{ matrix.nuttx_version }} https://github.com/apache/incubator-nuttx-apps apps
 
       - name: Build
         shell: bash
@@ -36,3 +38,7 @@ jobs:
           cp repo/.github/workflows/ci_config  microros_nuttx/nuttx/.config
           cd microros_nuttx/nuttx/
           make -j$(nproc)
+
+      - name: Check binaries
+        run: |
+          (test -f microros_nuttx/nuttx/nuttx.bin) && true || false
