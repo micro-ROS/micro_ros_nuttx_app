@@ -43,6 +43,15 @@ jobs:
           ./tools/configure.sh -l b-l475e-iot01a:nsh
           kconfig-tweak --enable CONFIG_MICROROSLIB
           kconfig-tweak --enable CONFIG_SERIAL_TERMIOS
+          kconfig-tweak --enable CONFIG_STM32L4_UART4
+          kconfig-tweak --enable CONFIG_STM32L4_UART4_SERIALDRIVER
+          kconfig-tweak --enable CONFIG_UART4_SERIALDRIVER
+          kconfig-tweak --set-val CONFIG_UART4_RXBUFSIZE 256
+          kconfig-tweak --set-val CONFIG_UART4_TXBUFSIZE 256
+          kconfig-tweak --set-val CONFIG_UART4_BAUD 115200
+          kconfig-tweak --set-val CONFIG_UART4_BITS 8
+          kconfig-tweak --set-val CONFIG_UART4_PARITY 0
+          kconfig-tweak --set-val CONFIG_UART4_2STOP 0
           make -j$(nproc)
 
       - name: Check binaries

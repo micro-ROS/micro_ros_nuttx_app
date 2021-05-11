@@ -35,7 +35,13 @@ int main(int argc, char *argv[])
     rcl_init_options_t init_options = rcl_get_zero_initialized_init_options();
     RCCHECK(rcl_init_options_init(&init_options, allocator));
 	rmw_init_options_t* rmw_options = rcl_init_options_get_rmw_init_options(&init_options);
-	RCCHECK(rmw_uros_options_set_serial_device("/dev/ttyS0", rmw_options))
+    
+    char * device = "/dev/ttyS1";
+    if (argc >= 2){
+        device = argv[1];
+    }
+
+	RCCHECK(rmw_uros_options_set_serial_device(device, rmw_options))
 
     // create init_options
 	RCCHECK(rclc_support_init_with_options(&support, 0, NULL, &init_options, &allocator));
