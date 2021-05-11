@@ -21,7 +21,7 @@ In order to test a int32_publisher example for [STM32L4 Discovery kit IoT node](
 
 <!-- 
 Deps:
-apt install git bison flex gettext texinfo libncurses5-dev libncursesw5-dev gperf automake libtool pkg-config build-essential gperf genromfs libgmp-dev libmpc-dev libmpfr-dev libisl-dev binutils-dev libelf-dev libexpat-dev gcc-multilib g++-multilib picocom u-boot-tools util-linux kconfig-frontends gcc-arm-none-eabi binutils-arm-none-eabi python3-pip cmake
+apt install git bison flex gettext texinfo libncurses5-dev libncursesw5-dev gperf automake libtool pkg-config build-essential gperf genromfs libgmp-dev libmpc-dev libmpfr-dev libisl-dev binutils-dev libelf-dev libexpat-dev gcc-multilib g++-multilib picocom u-boot-tools util-linux kconfig-frontends gcc-arm-none-eabi binutils-arm-none-eabi python3-pip cmake sudo
 
 pip3 install catkin_pkg lark-parser empy colcon-common-extensions
 -->
