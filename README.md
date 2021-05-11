@@ -35,18 +35,38 @@ git clone https://github.com/micro-ROS/micro_ros_nuttx_app apps/microros
 cd nuttx
 ./tools/configure.sh -l b-l475e-iot01a:nsh
 ```
-4. Enable micro-ROS library and Serial Termios using `make menuconfig` or:
+4. Enable micro-ROS library, UART4 and Serial Termios using `make menuconfig` or:
 ```bash
 kconfig-tweak --enable CONFIG_MICROROSLIB
 kconfig-tweak --enable CONFIG_SERIAL_TERMIOS
+kconfig-tweak --enable CONFIG_STM32L4_UART4
+kconfig-tweak --enable CONFIG_STM32L4_UART4_SERIALDRIVER
+kconfig-tweak --enable CONFIG_UART4_SERIALDRIVER
+kconfig-tweak --set-val CONFIG_UART4_RXBUFSIZE 256
+kconfig-tweak --set-val CONFIG_UART4_TXBUFSIZE 256
+kconfig-tweak --set-val CONFIG_UART4_BAUD 115200
+kconfig-tweak --set-val CONFIG_UART4_BITS 8
+kconfig-tweak --set-val CONFIG_UART4_PARITY 0
+kconfig-tweak --set-val CONFIG_UART4_2STOP 0
 ```
 5. Build Nuttx:
 ```bash
 make -j$(nproc)
 ```
-5. Flash the board:
+6. Flash the board:
 ```bash
 openocd -f interface/stlink-v2-1.cfg -f target/stm32l4x.cfg -c init -c "reset halt" -c "flash write_image erase nuttx.bin 0x08000000" -c "reset" -c "exit"
+```
+7. Connect UART4 (the one in the Arduino header D0 and D1) to your micro-ROS Agent.
+8. You can run the micro-ROS example by launching `microros /dev/ttyS1` in NSH console. First argument is the serial port used for client to agent communication:
+```
+NuttShell (NSH) NuttX-10.1.0-RC1
+nsh> microros /dev/ttyS1
+micro-ROS transport: connected using serial mode, dev: '/dev/ttyS1'
+INFO: rcl_wait timeout 0 ms
+Sent: 0
+Sent: 1
+Sent: 2
 ```
 
 Is possible to use a micro-ROS Agent just with this docker command:
