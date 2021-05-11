@@ -32,11 +32,10 @@ jobs:
         shell: bash
         run: |
           cp -r repo microros_nuttx/apps/microros
-          pushd microros_nuttx/nuttx/
-          ./tools/configure.sh -l b-l475e-iot01a:nsh
-          popd
-          cp repo/.github/workflows/ci_config  microros_nuttx/nuttx/.config
           cd microros_nuttx/nuttx/
+          ./tools/configure.sh -l b-l475e-iot01a:nsh
+          kconfig-tweak --enable CONFIG_MICROROSLIB
+          kconfig-tweak --enable CONFIG_SERIAL_TERMIOS
           make -j$(nproc)
 
       - name: Check binaries
