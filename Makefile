@@ -3,7 +3,7 @@ include $(APPDIR)/Make.defs
 
 MAINSRC = microros_main.c
 
-CFLAGS += ${shell $(INCDIR) "$(CC)" $(APPDIR)/microros/include}
+CFLAGS += ${shell $(INCDIR) "$(CC)" include}
 
 PROGNAME = microros
 PRIORITY = SCHED_PRIORITY_DEFAULT
@@ -57,7 +57,7 @@ micro_ros_dev/install:
 	git clone -b foxy https://github.com/ros2/ament_cmake_ros src/ament_cmake_ros; \
 	colcon build; 
 
-micro_ros_src/src:
+micro_ros_src/src: micro_ros_dev/install
 	rm -rf micro_ros_src; \
 	mkdir micro_ros_src; cd micro_ros_src; \
 	git clone -b foxy https://github.com/eProsima/micro-CDR src/micro-CDR; \
@@ -87,11 +87,12 @@ micro_ros_src/src:
 
 micro_ros_src/install: toolchain.cmake micro_ros_dev/install micro_ros_src/src
 	cd micro_ros_src; \
-	. $(APPDIR)/microros//micro_ros_dev/install/local_setup.sh; \
+	AUXPWD=$$(pwd)/..; \
+	. ../micro_ros_dev/install/local_setup.sh; \
 	colcon build \
 		--merge-install \
 		--packages-ignore-regex=.*_cpp \
-		--metas $(APPDIR)/microros/colcon.meta $(APP_COLCON_META) \
+		--metas $$AUXPWD/colcon.meta $(APP_COLCON_META) \
 		--cmake-args \
 		"--no-warn-unused-cli" \
 		-DCMAKE_POSITION_INDEPENDENT_CODE:BOOL=OFF \
@@ -99,12 +100,13 @@ micro_ros_src/install: toolchain.cmake micro_ros_dev/install micro_ros_src/src
 		-DBUILD_SHARED_LIBS=OFF \
 		-DBUILD_TESTING=OFF \
 		-DCMAKE_BUILD_TYPE=$(BUILD_TYPE) \
-		-DCMAKE_TOOLCHAIN_FILE=$(APPDIR)/microros/toolchain.cmake \
+		-DCMAKE_TOOLCHAIN_FILE=$$AUXPWD/toolchain.cmake \
 		-DCMAKE_VERBOSE_MAKEFILE=OFF; \
 
 libmicroros.a: micro_ros_src/install
 	mkdir -p libmicroros; cd libmicroros; \
-	for file in $$(find $(APPDIR)/microros/micro_ros_src/install/lib/ -name '*.a'); do \
+	AUXPWD=$$(pwd)/..; \
+	for file in $$(find $$AUXPWD/micro_ros_src/install/lib/ -name '*.a'); do \
 		folder=$$(echo $$file | sed -E "s/(.+)\/(.+).a/\2/"); \
 		mkdir -p $$folder; cd $$folder; ar x $$file; \
 		for f in *; do \
