@@ -19,6 +19,12 @@ You can clone this repo directly in the `app` folder of your project.
 
 In order to test a int32_publisher example for [STM32L4 Discovery kit IoT node](https://www.st.com/en/evaluation-tools/b-l475e-iot01a.html):
 
+<!-- 
+Deps:
+apt install git bison flex gettext texinfo libncurses5-dev libncursesw5-dev gperf automake libtool pkg-config build-essential gperf genromfs libgmp-dev libmpc-dev libmpfr-dev libisl-dev binutils-dev libelf-dev libexpat-dev gcc-multilib g++-multilib picocom u-boot-tools util-linux kconfig-frontends gcc-arm-none-eabi binutils-arm-none-eabi python3-pip cmake
+
+pip3 install catkin_pkg lark-parser empy colcon-common-extensions
+-->
 1. Install all the Nuttx dependencies using the [official documentation](https://nuttx.apache.org/docs/10.0.0/quickstart/install.html)
 2. Clone this repo inside `apps` folder:
 ```bash
