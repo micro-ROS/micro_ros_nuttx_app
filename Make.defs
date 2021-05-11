@@ -1,3 +1,5 @@
 ifneq ($(CONFIG_MICROROSLIB),)
-CONFIGURED_APPS += $(APPDIR)/microros
+mkfile_path := $(abspath $(lastword $(MAKEFILE_LIST)))
+MICROROS_FOLDER := $(notdir $(patsubst %/,%,$(dir $(mkfile_path))))
+CONFIGURED_APPS += $(APPDIR)/$(MICROROS_FOLDER)
 endif
