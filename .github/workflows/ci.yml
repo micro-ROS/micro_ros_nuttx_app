@@ -13,6 +13,7 @@ jobs:
     strategy:
       matrix:
         nuttx_version: [releases/9.0, releases/9.1, releases/10.0, releases/10.1]
+      fail-fast: false
     steps:
       - uses: actions/checkout@v2
         with:
