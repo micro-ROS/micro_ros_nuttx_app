@@ -56,7 +56,7 @@ micro_ros_dev/install:
 	git clone -b ros2 https://github.com/ament/googletest src/googletest; \
 	git clone -b master https://github.com/ros2/ament_cmake_ros src/ament_cmake_ros; \
 	git clone -b master https://github.com/ament/ament_index src/ament_index; \
-	colcon build --cmake-args -DBUILD_TESTING=OFF; 
+	colcon build --cmake-args -DBUILD_TESTING=OFF;
 
 micro_ros_src/src: micro_ros_dev/install
 	rm -rf micro_ros_src; \
@@ -80,7 +80,6 @@ micro_ros_src/src: micro_ros_dev/install
 	git clone -b master https://github.com/ros2/rmw_implementation src/rmw_implementation; \
 	git clone -b master https://github.com/ros2/rcl_logging src/rcl_logging; \
 	git clone -b master https://gitlab.com/micro-ROS/ros_tracing/ros2_tracing src/ros2_tracing; \
-	touch src/rosidl/rosidl_typesupport_introspection_c/COLCON_IGNORE; \
     touch src/rosidl/rosidl_typesupport_introspection_cpp/COLCON_IGNORE; \
     touch src/rcl_logging/rcl_logging_log4cxx/COLCON_IGNORE; \
     touch src/rcl_logging/rcl_logging_spdlog/COLCON_IGNORE; \
@@ -122,7 +121,7 @@ libmicroros.a: micro_ros_src/install
 	cd ..; rm -rf libmicroros; \
 	# cd ..; \
 	cp -R micro_ros_src/install/include include;
-	
+
 
 include $(APPDIR)/Application.mk
 
