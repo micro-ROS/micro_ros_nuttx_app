@@ -1,7 +1,7 @@
 include $(APPDIR)/Make.defs
 -include $(SDKDIR)/Make.defs
 
-galacticSRC = microros_galactic.c
+MAINSRC = microros_main.c
 
 CFLAGS += ${shell $(INCDIR) "$(CC)" include}
 
