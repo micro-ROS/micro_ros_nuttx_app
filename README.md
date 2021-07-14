@@ -7,7 +7,6 @@ This component has been tested in Nuttx 10 and Nuttx 10.1.
 This component needs `colcon` and other Python 3 packages in order to build micro-ROS packages:
 
 ```bash
-. $IDF_PATH/export.sh
 pip3 install catkin_pkg lark-parser empy colcon-common-extensions
 ```
 
