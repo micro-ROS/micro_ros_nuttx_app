@@ -7,7 +7,6 @@ This component has been tested in Nuttx 10 and Nuttx 10.1.
 This component needs `colcon` and other Python 3 packages in order to build micro-ROS packages:
 
 ```bash
-. $IDF_PATH/export.sh
 pip3 install catkin_pkg lark-parser empy colcon-common-extensions
 ```
 
@@ -19,7 +18,7 @@ You can clone this repo directly in the `app` folder of your project.
 
 In order to test a int32_publisher example for [STM32L4 Discovery kit IoT node](https://www.st.com/en/evaluation-tools/b-l475e-iot01a.html):
 
-<!-- 
+<!--
 Deps:
 apt install git bison flex gettext texinfo libncurses5-dev libncursesw5-dev gperf automake libtool pkg-config build-essential gperf genromfs libgmp-dev libmpc-dev libmpfr-dev libisl-dev binutils-dev libelf-dev libexpat-dev gcc-multilib g++-multilib picocom u-boot-tools util-linux kconfig-frontends gcc-arm-none-eabi binutils-arm-none-eabi python3-pip cmake sudo
 
@@ -73,7 +72,7 @@ Is possible to use a micro-ROS Agent just with this docker command:
 
 ```bash
 # Serial micro-ROS Agent
-docker run -it --rm -v /dev:/dev --privileged --net=host microros/micro-ros-agent:main serial --dev [YOUR BOARD PORT] -v6
+docker run -it --rm -v /dev:/dev --privileged --net=host microros/micro-ros-agent:galactic serial --dev [YOUR BOARD PORT] -v6
 ```
 ## Purpose of the Project
 
