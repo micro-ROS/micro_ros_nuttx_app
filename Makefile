@@ -63,6 +63,7 @@ micro_ros_src/src: micro_ros_dev/install
 	mkdir micro_ros_src; cd micro_ros_src; \
 	git clone -b foxy https://github.com/eProsima/micro-CDR src/micro-CDR; \
 	git clone -b foxy https://github.com/eProsima/Micro-XRCE-DDS-Client src/Micro-XRCE-DDS-Client; \
+<<<<<<< HEAD
 	git clone -b galactic https://github.com/micro-ROS/rcl src/rcl; \
 	git clone -b galactic https://github.com/ros2/rclc src/rclc; \
 	git clone -b galactic https://github.com/micro-ROS/rcutils src/rcutils; \
@@ -81,6 +82,26 @@ micro_ros_src/src: micro_ros_dev/install
 	git clone -b galactic https://github.com/ros2/rcl_logging src/rcl_logging; \
 	git clone -b galactic https://gitlab.com/micro-ROS/ros_tracing/ros2_tracing src/ros2_tracing; \
 	git clone -b galactic https://github.com/micro-ROS/micro_ros_utilities; \
+=======
+	git clone -b master https://github.com/micro-ROS/rcl src/rcl; \
+	git clone -b master https://github.com/ros2/rclc src/rclc; \
+	git clone -b master https://github.com/micro-ROS/rcutils src/rcutils; \
+	git clone -b main https://github.com/micro-ROS/micro_ros_msgs src/micro_ros_msgs; \
+	git clone -b main https://github.com/micro-ROS/rmw-microxrcedds src/rmw-microxrcedds; \
+	git clone -b master https://github.com/micro-ROS/rosidl_typesupport src/rosidl_typesupport; \
+	git clone -b main https://github.com/micro-ROS/rosidl_typesupport_microxrcedds src/rosidl_typesupport_microxrcedds; \
+	git clone -b master https://github.com/ros2/rosidl src/rosidl; \
+	git clone -b master https://github.com/ros2/rmw src/rmw; \
+	git clone -b master https://github.com/ros2/rcl_interfaces src/rcl_interfaces; \
+	git clone -b master https://github.com/ros2/rosidl_defaults src/rosidl_defaults; \
+	git clone -b master https://github.com/ros2/unique_identifier_msgs src/unique_identifier_msgs; \
+	git clone -b master https://github.com/ros2/common_interfaces src/common_interfaces; \
+	git clone -b master https://github.com/ros2/test_interface_files src/test_interface_files; \
+	git clone -b master https://github.com/ros2/rmw_implementation src/rmw_implementation; \
+	git clone -b master https://github.com/ros2/rcl_logging src/rcl_logging; \
+	git clone -b master https://gitlab.com/micro-ROS/ros_tracing/ros2_tracing src/ros2_tracing; \
+	git clone -b main https://github.com/micro-ROS/micro_ros_utilities src/micro_ros_utilities; \
+>>>>>>> 75ebbc1 (Fix paths (#15))
     touch src/rosidl/rosidl_typesupport_introspection_cpp/COLCON_IGNORE; \
     touch src/rcl_logging/rcl_logging_log4cxx/COLCON_IGNORE; \
     touch src/rcl_logging/rcl_logging_spdlog/COLCON_IGNORE; \
@@ -91,6 +112,8 @@ micro_ros_src/src: micro_ros_dev/install
 micro_ros_src/install: toolchain.cmake micro_ros_dev/install micro_ros_src/src
 	cd micro_ros_src; \
 	AUXPWD=$$(pwd)/..; \
+	unset AMENT_PREFIX_PATH; \
+	PATH=$(subst /opt/ros/$(ROS_DISTRO)/bin,,$(PATH)); \
 	. ../micro_ros_dev/install/local_setup.sh; \
 	colcon build \
 		--merge-install \
