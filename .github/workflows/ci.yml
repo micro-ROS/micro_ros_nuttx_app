@@ -2,7 +2,7 @@ name: CI
 
 on:
   pull_request:
-    branches: 
+    branches:
       - '**'
   workflow_dispatch:
     inputs:
@@ -15,7 +15,7 @@ jobs:
 
   micro_ros_nuttx_app:
     runs-on: ubuntu-latest
-    container: ubuntu:20.04    
+    container: ubuntu:20.04
     strategy:
       matrix:
         nuttx_version: [releases/10.0, releases/10.1]
@@ -42,6 +42,7 @@ jobs:
           cd microros_nuttx/nuttx/
           ./tools/configure.sh -l b-l475e-iot01a:nsh
           kconfig-tweak --enable CONFIG_MICROROSLIB
+          kconfig-tweak --enable CONFIG_MICROROS_EXAMPLE
           kconfig-tweak --enable CONFIG_SERIAL_TERMIOS
           kconfig-tweak --enable CONFIG_STM32L4_UART4
           kconfig-tweak --enable CONFIG_STM32L4_UART4_SERIALDRIVER
