@@ -1,0 +1,6 @@
+config MICROROS_EXAMPLE
+  bool "micro-ROS example app"
+  default n
+  depends on MICROROSLIB
+  ---help---
+    Enable the micro-ROS example app
