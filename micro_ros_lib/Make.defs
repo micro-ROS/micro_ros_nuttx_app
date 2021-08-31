@@ -1,0 +1,3 @@
+ifneq ($(CONFIG_MICROROSLIB),)
+CONFIGURED_APPS += $(APPDIR)/$(MICROROS_TOP_FOLDER)/micro_ros_lib
+endif
