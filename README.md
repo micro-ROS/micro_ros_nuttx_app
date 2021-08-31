@@ -1,3 +1,13 @@
+<br/>
+
+<a>
+   <p align="center">
+      <img src=".images/nuttx.png">
+      <img style="padding-left:10vw" width="40%" src=".images/microros_logo.png">
+   </p>
+</a>
+<br/>
+
 # micro-ROS app for Nuttx RTOS
 
 This component has been tested in Nuttx 10 and Nuttx 10.1.
@@ -18,7 +28,7 @@ You can clone this repo directly in the `app` folder of your project.
 
 In order to test a int32_publisher example for [STM32L4 Discovery kit IoT node](https://www.st.com/en/evaluation-tools/b-l475e-iot01a.html):
 
-<!-- 
+<!--
 Deps:
 apt install git bison flex gettext texinfo libncurses5-dev libncursesw5-dev gperf automake libtool pkg-config build-essential gperf genromfs libgmp-dev libmpc-dev libmpfr-dev libisl-dev binutils-dev libelf-dev libexpat-dev gcc-multilib g++-multilib picocom u-boot-tools util-linux kconfig-frontends gcc-arm-none-eabi binutils-arm-none-eabi python3-pip cmake sudo
 
