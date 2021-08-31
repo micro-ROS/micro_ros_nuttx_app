@@ -47,6 +47,7 @@ cd nuttx
 4. Enable micro-ROS library, UART4 and Serial Termios using `make menuconfig` or:
 ```bash
 kconfig-tweak --enable CONFIG_MICROROSLIB
+kconfig-tweak --enable CONFIG_MICROROS_EXAMPLE
 kconfig-tweak --enable CONFIG_SERIAL_TERMIOS
 kconfig-tweak --enable CONFIG_STM32L4_UART4
 kconfig-tweak --enable CONFIG_STM32L4_UART4_SERIALDRIVER
