@@ -2,7 +2,7 @@
 
 <a>
    <p align="center">
-      <img src=".images/nuttx.jpg">
+      <img src=".images/nuttx.png">
       <img style="padding-left:10vw" width="40%" src=".images/microros_logo.png">
    </p>
 </a>
