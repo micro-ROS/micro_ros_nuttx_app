@@ -2,8 +2,8 @@
 Changelog for package micro_ros_nuttx
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+3.0.0 (2022-05-25)
+------------------
 * Initial Humble Release (`#25 <https://github.com/micro-ROS/micro_ros_nuttx_app/issues/25>`_)
 * Update banner (`#23 <https://github.com/micro-ROS/micro_ros_nuttx_app/issues/23>`_)
 * Fix Rolling includes (`#22 <https://github.com/micro-ROS/micro_ros_nuttx_app/issues/22>`_)
