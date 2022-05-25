@@ -2,8 +2,8 @@
 Changelog for package micro_ros_nuttx
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.0 (2022-05-25)
+------------------
 * Update banner (`#23 <https://github.com/micro-ROS/micro_ros_nuttx_app/issues/23>`_) (`#24 <https://github.com/micro-ROS/micro_ros_nuttx_app/issues/24>`_)
 * Add badges
 * Split codes for micro-ros lib and example (`#21 <https://github.com/micro-ROS/micro_ros_nuttx_app/issues/21>`_)
