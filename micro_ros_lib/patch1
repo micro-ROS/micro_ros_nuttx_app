@@ -1,0 +1,23 @@
+--- micro_ros_src/src/rcutils/src/filesystem.c	2023-01-01 10:46:25.425650951 +0100
++++ /home/bucher/sviluppo/GITHUB/ROS2_e_microROS/rcutils/src/filesystem.c	2022-12-28 14:34:59.020737985 +0100
+@@ -46,9 +46,9 @@
+ #include <direct.h>
+ #endif  // _WIN32
+ 
+-#include "rcutils/env.h"
+ #include "rcutils/error_handling.h"
+ #include "rcutils/format_string.h"
++#include "rcutils/get_env.h"
+ #include "rcutils/repl_str.h"
+ #include "rcutils/strdup.h"
+ 
+@@ -59,7 +59,9 @@
+ #endif  // _WIN32
+ 
+ #ifdef RCUTILS_NO_FILESYSTEM
++#ifndef __NuttX__
+ typedef int DIR;
++#endif
+ #endif  // _RCUTILS_NO_FILESYSTEM
+ typedef struct rcutils_dir_iter_state_t
+ {

@@ -7,6 +7,13 @@
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [![Galactic](https://github.com/micro-ROS/micro_ros_nuttx_app/actions/workflows/ci.yml/badge.svg?branch=galactic&event=schedule)](https://github.com/micro-ROS/micro_ros_nuttx_app/actions/workflows/ci.yml) | [![Rolling](https://github.com/micro-ROS/micro_ros_nuttx_app/actions/workflows/ci.yml/badge.svg?branch=main&event=schedule)](https://github.com/micro-ROS/micro_ros_nuttx_app/actions/workflows/ci.yml) | [![Humble](https://github.com/micro-ROS/micro_ros_nuttx_app/actions/workflows/ci.yml/badge.svg?branch=humble&event=schedule)](https://github.com/micro-ROS/micro_ros_nuttx_app/actions/workflows/ci.yml) |
 
+The last modifications allow to compile the library and the app under NUttX 11. The provided example now compiles, but it should be tested again.
+
+Modifications are only for Humble.
+
+I provided some additional tests, successfully performed on a NUCLEO-F746ZG board, on a new github repository (https://github.com/robertobucher/microros_nuttx).
+
+---------------------------------------------------
 
 This component has been tested in Nuttx 10.1 and Nuttx 10.3.
 
