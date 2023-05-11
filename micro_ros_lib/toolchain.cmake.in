@@ -19,6 +19,7 @@ include_directories(SYSTEM
 	${NUTTX_TOPDIR}/include
 	${NUTTX_TOPDIR}/include/cxx
     ${NUTTX_APPDIR}/include
+	./include_override
 )
-	
+
 set(__BIG_ENDIAN__ 0)
