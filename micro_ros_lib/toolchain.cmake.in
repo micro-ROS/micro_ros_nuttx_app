@@ -16,7 +16,7 @@ set(NUTTX_TOPDIR @NUTTX_TOPDIR@)
 set(NUTTX_APPDIR @NUTTX_APPDIR@)
 set(INCLUDE_OVR_DIR @INCLUDE_OVR_DIR@)
 
-include_directories(BEFORE SYSTEM
+include_directories(SYSTEM
 	${NUTTX_TOPDIR}/include
 	${NUTTX_TOPDIR}/include/cxx
     ${NUTTX_APPDIR}/include
