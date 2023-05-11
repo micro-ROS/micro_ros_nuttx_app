@@ -27,15 +27,14 @@ FORMATED_CXXFLAGS := $(subst ",,$(FORMATED_CXXFLAGS))
 FORMATED_CFLAGS := $(subst /,\/,$(CFLAGS))
 FORMATED_CFLAGS := $(subst ",,$(FORMATED_CFLAGS))
 
-PWD = $$(pwd)
-
+INCLUDE_OVR_DIR = $$(pwd)
 
 toolchain.cmake: toolchain.cmake.in
 	rm -rf toolchain.cmake; \
 	cat toolchain.cmake.in | \
 		sed "s/@NUTTX_TOPDIR@/$(subst /,\/,$(TOPDIR))/g" | \
 		sed "s/@NUTTX_APPDIR@/$(subst /,\/,$(APPDIR))/g" | \
-		sed "s/@INCLUDE_OVR_DIR@/$(subst /,\/,$(PWD))/g" | \
+		sed "s/@INCLUDE_OVR_DIR@/$(subst /,\/,$(INCLUDE_OVR_DIR))/g" | \
 		sed "s/@CMAKE_C_COMPILER@/$(subst /,\/,$(CC))/g" | \
 		sed "s/@CMAKE_CXX_COMPILER@/$(subst /,\/,$(CXX))/g" | \
 		sed "s/@ARCH_C_FLAGS@/$(FORMATED_CFLAGS)/g" | \
