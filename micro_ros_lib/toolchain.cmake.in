@@ -14,11 +14,16 @@ set(CMAKE_CXX_FLAGS_INIT "-std=c++14 @ARCH_CPP_FLAGS@  -fno-rtti -DCLOCK_MONOTON
 
 set(NUTTX_TOPDIR @NUTTX_TOPDIR@)
 set(NUTTX_APPDIR @NUTTX_APPDIR@)
+set(INCLUDE_OVR_DIR @INCLUDE_OVR_DIR@)
 
-include_directories(SYSTEM 
+include_directories(SYSTEM
 	${NUTTX_TOPDIR}/include
 	${NUTTX_TOPDIR}/include/cxx
     ${NUTTX_APPDIR}/include
 )
-	
+
+include_directories(AFTER SYSTEM
+	${INCLUDE_OVR_DIR}/include_override
+)
+
 set(__BIG_ENDIAN__ 0)
