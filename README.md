@@ -3,10 +3,10 @@
 
 # micro-ROS app for Nuttx RTOS
 
-| Galactic                                                                                                                                                                                                     | Rolling                                                                                                                                                                                                 |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [![Galactic](https://github.com/micro-ROS/micro_ros_nuttx_app/actions/workflows/ci.yml/badge.svg?branch=galactic&event=schedule)](https://github.com/micro-ROS/micro_ros_nuttx_app/actions/workflows/ci.yml) | [![Rolling](https://github.com/micro-ROS/micro_ros_nuttx_app/actions/workflows/ci.yml/badge.svg?branch=main&event=schedule)](https://github.com/micro-ROS/micro_ros_nuttx_app/actions/workflows/ci.yml) |
 
+| Humble | Iron | Rolling |
+| ------ | ---- | ------- |
+| [![Humble](https://github.com/micro-ROS/micro_ros_nuttx_app/actions/workflows/ci.yml/badge.svg?branch=humble&event=schedule)](https://github.com/micro-ROS/micro_ros_nuttx_app/actions/workflows/ci.yml) | [![Iron](https://github.com/micro-ROS/micro_ros_nuttx_app/actions/workflows/ci.yml/badge.svg?branch=iron&event=schedule)](https://github.com/micro-ROS/micro_ros_nuttx_app/actions/workflows/ci.yml) | [![Rolling](https://github.com/micro-ROS/micro_ros_nuttx_app/actions/workflows/ci.yml/badge.svg?branch=rolling&event=schedule)](https://github.com/micro-ROS/micro_ros_nuttx_app/actions/workflows/ci.yml) |
 
 This component has been tested in Nuttx 10.1 and Nuttx 10.3.
 
@@ -81,7 +81,7 @@ Is possible to use a micro-ROS Agent just with this docker command:
 
 ```bash
 # Serial micro-ROS Agent
-docker run -it --rm -v /dev:/dev --privileged --net=host microros/micro-ros-agent:main serial --dev [YOUR BOARD PORT] -v6
+docker run -it --rm -v /dev:/dev --privileged --net=host microros/micro-ros-agent:rolling serial --dev [YOUR BOARD PORT] -v6
 ```
 ## Purpose of the Project
 
