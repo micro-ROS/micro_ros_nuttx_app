@@ -56,7 +56,7 @@ micro_ros_src/src: micro_ros_dev/install
 	git clone -b ros2 https://github.com/eProsima/micro-CDR src/micro-CDR; \
 	git clone -b ros2 https://github.com/eProsima/Micro-XRCE-DDS-Client src/Micro-XRCE-DDS-Client; \
     git clone -b rolling https://github.com/micro-ROS/rcl src/rcl; \
-    git clone -b master https://github.com/ros2/rclc src/rclc; \
+    git clone -b rolling https://github.com/ros2/rclc src/rclc; \
     git clone -b rolling https://github.com/micro-ROS/rcutils src/rcutils; \
     git clone -b rolling https://github.com/micro-ROS/micro_ros_msgs src/micro_ros_msgs; \
     git clone -b rolling https://github.com/micro-ROS/rmw-microxrcedds src/rmw-microxrcedds; \
