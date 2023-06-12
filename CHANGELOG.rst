@@ -2,8 +2,8 @@
 Changelog for package micro_ros_nuttx
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+3.0.1 (2023-06-12)
+------------------
 * Deprecate Nuttx 10.0 in favor of Nuttx 10.3 (`#28 <https://github.com/micro-ROS/micro_ros_nuttx_app//issues/28>`_)
 
 3.0.0 (2022-05-25)
