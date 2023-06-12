@@ -2,6 +2,12 @@
 Changelog for package micro_ros_nuttx
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Update repositories to rolling (`#35 <https://github.com/micro-ROS/micro_ros_nuttx_app//issues/35>`_)
+* Fix rolling branches (`#33 <https://github.com/micro-ROS/micro_ros_nuttx_app//issues/33>`_)
+* Add rosidl_core (`#27 <https://github.com/micro-ROS/micro_ros_nuttx_app//issues/27>`_)
+
 4.0.0 (2022-05-25)
 ------------------
 * Update banner (`#23 <https://github.com/micro-ROS/micro_ros_nuttx_app/issues/23>`_)
