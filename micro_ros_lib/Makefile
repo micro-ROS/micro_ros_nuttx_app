@@ -61,7 +61,7 @@ micro_ros_src/src: micro_ros_dev/install
     git clone -b rolling https://github.com/micro-ROS/micro_ros_msgs src/micro_ros_msgs; \
     git clone -b rolling https://github.com/micro-ROS/rmw-microxrcedds src/rmw-microxrcedds; \
     git clone -b rolling https://github.com/micro-ROS/rosidl_typesupport src/rosidl_typesupport; \
-    git clone -b rolling https://github.com/micro-ROS/rosidl_typesupport_microxrcedds src/rosidl_typesupport_microxrcedds; \
+    git clone -b rolling https://github.com/ros2/rosidl_typesupport_microxrcedds src/rosidl_typesupport_microxrcedds; \
     git clone -b rolling https://github.com/ros2/rosidl src/rosidl; \
     git clone -b rolling https://github.com/micro-ROS/rosidl_dynamic_typesupport src/rosidl_dynamic_typesupport; \
     git clone -b rolling https://github.com/ros2/rmw src/rmw; \
