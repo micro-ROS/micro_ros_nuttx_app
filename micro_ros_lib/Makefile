@@ -63,7 +63,7 @@ micro_ros_src/src: micro_ros_dev/install
     git clone -b iron https://github.com/micro-ROS/rosidl_typesupport src/rosidl_typesupport; \
     git clone -b iron https://github.com/micro-ROS/rosidl_typesupport_microxrcedds src/rosidl_typesupport_microxrcedds; \
     git clone -b iron https://github.com/ros2/rosidl src/rosidl; \
-    git clone -b iron https://github.com/micro-ROS/rosidl_dynamic_typesupport src/rosidl_dynamic_typesupport; \
+    git clone -b iron https://github.com/ros2/rosidl_dynamic_typesupport src/rosidl_dynamic_typesupport; \
     git clone -b iron https://github.com/ros2/rmw src/rmw; \
     git clone -b iron https://github.com/ros2/rcl_interfaces src/rcl_interfaces; \
     git clone -b iron https://github.com/ros2/rosidl_defaults src/rosidl_defaults; \
