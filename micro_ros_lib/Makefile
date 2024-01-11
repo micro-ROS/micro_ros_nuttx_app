@@ -77,6 +77,7 @@ micro_ros_src/src: micro_ros_dev/install
 	git clone -b rolling https://github.com/ros2/rosidl_core src/rosidl_core; \
     touch src/rosidl/rosidl_typesupport_introspection_cpp/COLCON_IGNORE; \
     touch src/ros2_tracing/test_tracetools/COLCON_IGNORE; \
+    touch src/ros2_tracing/lttngpy/COLCON_IGNORE; \
     touch src/rcl_logging/rcl_logging_spdlog/COLCON_IGNORE; \
     touch src/rclc/rclc_examples/COLCON_IGNORE; \
 	touch src/rcl/rcl_yaml_param_parser/COLCON_IGNORE; \
