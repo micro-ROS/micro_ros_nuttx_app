@@ -30,7 +30,7 @@ jobs:
           apt update
           export DEBIAN_FRONTEND=noninteractive
           apt install -y --no-install-recommends git bison flex gettext texinfo libncurses5-dev libncursesw5-dev gperf automake libtool pkg-config build-essential gperf genromfs libgmp-dev libmpc-dev libmpfr-dev libisl-dev binutils-dev libelf-dev libexpat-dev gcc-multilib g++-multilib picocom u-boot-tools util-linux kconfig-frontends gcc-arm-none-eabi binutils-arm-none-eabi python3-pip cmake libnewlib-arm-none-eabi
-          pip3 install catkin_pkg lark-parser empy colcon-common-extensions
+          pip3 install catkin_pkg lark-parser colcon-common-extensions
           mkdir microros_nuttx; cd microros_nuttx;
           git clone -b ${{ matrix.nuttx_version }} https://github.com/apache/incubator-nuttx.git nuttx
           git clone -b ${{ matrix.nuttx_version }} https://github.com/apache/incubator-nuttx-apps apps
