@@ -8,7 +8,7 @@
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [![Humble](https://github.com/micro-ROS/micro_ros_nuttx_app/actions/workflows/ci.yml/badge.svg?branch=humble&event=schedule)](https://github.com/micro-ROS/micro_ros_nuttx_app/actions/workflows/ci.yml) | [![Iron](https://github.com/micro-ROS/micro_ros_nuttx_app/actions/workflows/ci.yml/badge.svg?branch=iron&event=schedule)](https://github.com/micro-ROS/micro_ros_nuttx_app/actions/workflows/ci.yml) | [![Jazzy](https://github.com/micro-ROS/micro_ros_nuttx_app/actions/workflows/ci.yml/badge.svg?branch=jazzy&event=schedule)](https://github.com/micro-ROS/micro_ros_nuttx_app/actions/workflows/ci.yml) | [![Rolling](https://github.com/micro-ROS/micro_ros_nuttx_app/actions/workflows/ci.yml/badge.svg?branch=rolling&event=schedule)](https://github.com/micro-ROS/micro_ros_nuttx_app/actions/workflows/ci.yml) |
 
-This component has been tested in Nuttx 10.1 and Nuttx 10.3.
+This component has been tested in Nuttx 12.5 and Nuttx 10.3.
 
 ## Dependencies
 
