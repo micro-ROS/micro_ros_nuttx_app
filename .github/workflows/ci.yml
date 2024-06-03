@@ -18,7 +18,7 @@ jobs:
     container: ubuntu:24.04
     strategy:
       matrix:
-        nuttx_version: [releases/10.1, releases/10.3]
+        nuttx_version: [releases/12.5, releases/10.3]
       fail-fast: false
     steps:
       - uses: actions/checkout@v2
