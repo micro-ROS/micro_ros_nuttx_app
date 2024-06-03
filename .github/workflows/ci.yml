@@ -15,10 +15,10 @@ jobs:
 
   micro_ros_nuttx_app:
     runs-on: ubuntu-latest
-    container: ubuntu:20.04
+    container: ubuntu:24.04
     strategy:
       matrix:
-        nuttx_version: [releases/10.1, releases/10.3]
+        nuttx_version: [releases/10.3]
       fail-fast: false
     steps:
       - uses: actions/checkout@v2
