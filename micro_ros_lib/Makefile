@@ -48,6 +48,7 @@ micro_ros_dev/install:
     git clone -b rolling https://github.com/ament/googletest src/googletest; \
     git clone -b rolling https://github.com/ros2/ament_cmake_ros src/ament_cmake_ros; \
     git clone -b rolling https://github.com/ament/ament_index src/ament_index; \
+	touch src/ament_cmake_ros/rmw_test_fixture_implementation/COLCON_IGNORE; \
 	colcon build --cmake-args -DBUILD_TESTING=OFF;
 
 micro_ros_src/src: micro_ros_dev/install
@@ -81,6 +82,7 @@ micro_ros_src/src: micro_ros_dev/install
     touch src/rcl_logging/rcl_logging_spdlog/COLCON_IGNORE; \
     touch src/rclc/rclc_examples/COLCON_IGNORE; \
 	touch src/rcl/rcl_yaml_param_parser/COLCON_IGNORE; \
+	touch src/rmw/rmw_security_common/COLCON_IGNORE; \
 	cp -rf ../extra_packages src/extra_packages || :;
 
 micro_ros_src/install: toolchain.cmake micro_ros_dev/install micro_ros_src/src
